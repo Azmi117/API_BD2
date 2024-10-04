@@ -17,7 +17,8 @@ const sendGiftEmail = async (userEmail, giftVarian) => {
         from: process.env.EMAIL_USER, // Email pengirim
         to: userEmail, // Email penerima (email user)
         subject: 'Congratulations! You have received a gift!',
-        text: `You have received a gift: ${giftVarian}. Enjoy!`, // Isi email
+        text: `Hello my princess who is celebrating her birthday, if you have opened this email, it means you have played the spinner wheel that I made, and what you got is: ${giftVarian}. I hope you like it, happy birthday baby 😘`,
+        text: `-Azmi Yushari-` 
     };
 
     console.log('Mengirim email ke:', userEmail);
