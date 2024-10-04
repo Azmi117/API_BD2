@@ -19,8 +19,14 @@ const sendGiftEmail = async (userEmail, giftVarian) => {
         subject: 'Congratulations! You have received a gift!',
         text: `You have received a gift: ${giftVarian}. Enjoy!`, // Isi email
     };
-    console.log(userEmail);
-    return transporter.sendMail(mailOptions);
+
+    console.log('Mengirim email ke:', userEmail);
+    try {
+        let info = await transporter.sendMail(mailOptions);
+        console.log('Email berhasil dikirim:', info.response);
+    } catch (error) {
+        console.error('Gagal mengirim email:', error);
+    }
 };
 
 module.exports = {
